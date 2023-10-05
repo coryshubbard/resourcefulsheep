@@ -1,5 +1,6 @@
 package com.coryshubbard.resourcefulsheep;
 
+import com.coryshubbard.resourcefulsheep.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -25,6 +26,8 @@ public class ResourcefulSheep
     public ResourcefulSheep()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
